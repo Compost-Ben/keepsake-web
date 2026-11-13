@@ -3,8 +3,7 @@
 the dusk keyframe with the sun on open sea, as drawn north of the equator.
 The sky, stars and water fill the page, the horizon at 372/844 of its
 height; the light and the land keep the 390 x 844 phone's proportions,
-scaled to fit, the sun 91.5% across and the land's end 52.7%.
-sky.png is this at 1200 x 630. -->
+scaled to fit, the sun 91.5% across and the land's end 52.7%. -->
 <defs>
 <linearGradient id="b" x2="0" y2="1"><stop offset="0" stop-color="#0E1440"/><stop offset="0.5" stop-color="#264386"/><stop offset="0.8" stop-color="#6461E0"/><stop offset="1" stop-color="#F08AA8"/></linearGradient>
 <linearGradient id="w" x2="0" y2="1"><stop offset="0" stop-color="#7A5DBE"/><stop offset="0.02" stop-color="#6E57B6"/><stop offset="0.04" stop-color="#6250AD"/><stop offset="0.06" stop-color="#584CA5"/><stop offset="0.08" stop-color="#4F479F"/><stop offset="0.1" stop-color="#474399"/><stop offset="0.12" stop-color="#403F92"/><stop offset="0.14" stop-color="#3A3B8D"/><stop offset="0.16" stop-color="#343889"/><stop offset="0.18" stop-color="#303685"/><stop offset="0.2" stop-color="#2D3481"/><stop offset="0.22" stop-color="#2A327E"/><stop offset="0.24" stop-color="#29317C"/><stop offset="1" stop-color="#0A1033"/></linearGradient>
