@@ -1,15 +1,16 @@
 <!doctype html>
-<!-- An invite's link, /invite/#<code>, where KeepSake did not open. The
+<!-- An invite's link, /invite/#<code>, where Keepsake did not open. The
 code rides in the fragment, which no server sees, so every invite is this
-one page: status 200 and one preview card. Its button opens the app. -->
+one page: status 200 and one preview card. Its button opens the app; its
+one line is for a device without it. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0E1440">
-<title>KeepSake</title>
-<meta property="og:title" content="KeepSake">
+<title>Keepsake</title>
+<meta property="og:title" content="Keepsake">
 <meta property="og:description" content="An invite to connect.">
 <meta property="og:image" content="https://keepsake.benbushell.nz/sky.png">
 <style>
@@ -18,8 +19,11 @@ one page: status 200 and one preview card. Its button opens the app. -->
     margin: 0;
     min-height: 100vh;
     min-height: 100dvh;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
     padding: 0 16px;
     background: url(../sky.svg) 0 0 / 100% 100%;
     font: 600 17px -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
@@ -35,10 +39,19 @@ one page: status 200 and one preview card. Its button opens the app. -->
     text-align: center;
     text-decoration: none;
   }
+  p {
+    margin: 0;
+    max-width: 320px;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+  }
 </style>
 </head>
 <body>
-<a id="open" href="keepsake://">Open in KeepSake</a>
+<a id="open" href="keepsake://">Open in Keepsake</a>
+<p>No Keepsake on this device?<br>It is coming to the App Store.</p>
 <script>
   var found = location.hash.match(/^#([0-9A-Z]{10})$/i);
   if (found) document.getElementById('open').href = 'keepsake://invite/' + found[1].toUpperCase();
