@@ -1,0 +1,56 @@
+<!-- An invented keepsake: a photo, a sound on its parchment tile and a
+letter, as the app's sealed hero draws them. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 344 292">
+  <defs>
+    <clipPath id="a"><rect width="176" height="214" rx="16"/></clipPath>
+    <radialGradient id="glow">
+      <stop stop-color="#F7B463" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#F7B463" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- The cake, by its candles. -->
+  <g transform="translate(14 8) rotate(-3 88 107)" clip-path="url(#a)">
+    <rect width="176" height="214" fill="#2B1C1B"/>
+    <circle cx="88" cy="74" r="120" fill="url(#glow)"/>
+    <rect y="170" width="176" height="44" fill="#4B3026"/>
+    <rect y="170" width="176" height="3" fill="#6A4534"/>
+    <ellipse cx="88" cy="176" rx="66" ry="9" fill="#EFE7DC"/>
+    <rect x="38" y="112" width="100" height="62" rx="8" fill="#F8ECDD"/>
+    <path d="M36 124V116Q36 104 50 104H126Q140 104 140 116V124Q137 136 131 124Q125 142 117 124Q111 134 105 124Q99 146 91 124Q85 134 79 124Q73 142 65 124Q59 134 53 124Q45 138 36 124Z" fill="#F3A4B9"/>
+    <g stroke-width="4" stroke-linecap="round">
+      <path d="M56 103V84" stroke="#7CC6E8"/>
+      <path d="M72 103V80" stroke="#F6D365"/>
+      <path d="M88 103V78" stroke="#FFFFFF"/>
+      <path d="M104 103V80" stroke="#9BE0B0"/>
+      <path d="M120 103V84" stroke="#F6D365"/>
+    </g>
+    <g fill="#FFC56B" opacity=".35">
+      <circle cx="56" cy="73" r="11"/>
+      <circle cx="72" cy="69" r="11"/>
+      <circle cx="88" cy="67" r="11"/>
+      <circle cx="104" cy="69" r="11"/>
+      <circle cx="120" cy="73" r="11"/>
+    </g>
+    <g fill="#FFE9B0">
+      <ellipse cx="56" cy="73" rx="3.5" ry="6.5"/>
+      <ellipse cx="72" cy="69" rx="3.5" ry="6.5"/>
+      <ellipse cx="88" cy="67" rx="3.5" ry="6.5"/>
+      <ellipse cx="104" cy="69" rx="3.5" ry="6.5"/>
+      <ellipse cx="120" cy="73" rx="3.5" ry="6.5"/>
+    </g>
+  </g>
+
+  <!-- The sound: the Voice symbol in ink. -->
+  <g transform="translate(228 58) rotate(7 50 50)">
+    <rect width="100" height="100" rx="16" fill="#F1E8C8"/>
+    <path transform="translate(30.8 30.8) scale(1.6)" d="M12 3a3 3 0 0 0-3 3v4a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3zM5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="#221C12" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- The letter: Elegant Serif on Warm Ivory. -->
+  <g transform="translate(96 208) rotate(2 118 37)" font-family="'Playfair Display', Georgia, 'Times New Roman', serif" font-size="15.5" font-weight="600" fill="#221C12">
+    <rect width="236" height="74" fill="#E2D1BB"/>
+    <text x="16" y="32" textLength="168" lengthAdjust="spacingAndGlyphs">Happy sixtieth, Mum.</text>
+    <text x="16" y="54" textLength="196" lengthAdjust="spacingAndGlyphs">We all sang. Press play.</text>
+  </g>
+</svg>
