@@ -9,14 +9,14 @@
 <style>
   * { box-sizing: border-box; margin: 0; }
   html { background: #0E1440; }
-  /* The Dusk sky, held still: its bands from the top to the horizon. */
+  /* The app's Dusk sky, held still. */
   body::before {
     content: '';
     position: fixed;
     inset: 0 0 auto;
     height: 100vh;
     z-index: -1;
-    background: linear-gradient(#0E1440, #264386 50%, #6461E0 80%, #F08AA8);
+    background: url(sky.svg) 0 0 / 100% 100%;
   }
   body {
     max-width: 560px;
