@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- An invite's link, /invite/#<code>, where KeepSake did not open. The
+code rides in the fragment, which no server sees, so every invite is this
+one page: status 200 and one preview card. Its button opens the app. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0E1440">
+<title>KeepSake</title>
+<meta property="og:title" content="KeepSake">
+<meta property="og:description" content="An invite to connect.">
+<meta property="og:image" content="https://keepsake.benbushell.nz/sky.png">
+<style>
+  html { background: #0E1440; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+    padding: 0 16px;
+    background: linear-gradient(#0E1440, #264386 50%, #6461E0 80%, #F08AA8);
+    font: 600 17px -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+  a {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 320px;
+    padding: 15px 16px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    color: #0E1440;
+    text-align: center;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<a id="open" href="keepsake://">Open in KeepSake</a>
+<script>
+  var found = location.hash.match(/^#([0-9A-Z]{10})$/i);
+  if (found) document.getElementById('open').href = 'keepsake://invite/' + found[1].toUpperCase();
+</script>
+</body>
+</html>

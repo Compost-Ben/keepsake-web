@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0E1440">
+<title>KeepSake</title>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html { background: #0E1440; }
+  /* The Dusk sky, held still: its bands from the top to the horizon. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0 0 auto;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(#0E1440, #264386 50%, #6461E0 80%, #F08AA8);
+  }
+  body {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 48px 16px 32px;
+    color: #FFFFFF;
+    font: 17px/1.45 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  h1 { font-size: 34px; line-height: 1.2; margin-bottom: 12px; }
+  h2 { font-size: 20px; margin-bottom: 8px; }
+  section {
+    margin-top: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    background: rgba(14, 20, 64, 0.62);
+  }
+  .button {
+    display: block;
+    margin-top: 16px;
+    padding: 13px 16px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    color: #0E1440;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<h1>KeepSake</h1>
+<section>
+  <h2>About</h2>
+  <p>KeepSake is an app for keepsakes between two people. Make one from photos, video, sound, a letter or a song, then seal it and send it to someone on your Circle, or to someone new by a link. Once sealed, a keepsake never changes.</p>
+</section>
+<section>
+  <h2>Privacy</h2>
+  <p>What KeepSake keeps, where, and who can see it.</p>
+  <a class="button" href="privacy.html">Read the privacy policy</a>
+</section>
+<section>
+  <h2>Support</h2>
+  <p>Questions, problems or ideas: write to us.</p>
+  <a class="button" href="mailto:keepsake@benbushell.nz">keepsake@benbushell.nz</a>
+</section>
+</body>
+</html>

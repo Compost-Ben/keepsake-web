@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0E1440">
+<title>KeepSake privacy</title>
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html { background: #0E1440; }
+  /* The Dusk sky, held still: its bands from the top to the horizon. */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0 0 auto;
+    height: 100vh;
+    z-index: -1;
+    background: linear-gradient(#0E1440, #264386 50%, #6461E0 80%, #F08AA8);
+  }
+  body {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 32px 16px;
+    color: #FFFFFF;
+    font: 17px/1.45 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  a { color: inherit; }
+  h1 { font-size: 34px; line-height: 1.2; margin: 16px 0 12px; }
+  h2 { font-size: 20px; margin-bottom: 8px; }
+  section {
+    margin-top: 12px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 16px;
+    background: rgba(14, 20, 64, 0.62);
+  }
+  ul { padding-left: 20px; }
+  li + li, p + ul, ul + p { margin-top: 8px; }
+</style>
+</head>
+<body>
+<a href="/">KeepSake</a>
+<h1>Privacy</h1>
+<section>
+  <h2>Signing in</h2>
+  <p>You sign in with your email address and a six-digit code emailed to you by Supabase, the service KeepSake’s servers run on. Your address is kept with your account, and your phone stays signed in until you sign out.</p>
+</section>
+<section>
+  <h2>What KeepSake keeps</h2>
+  <p>On its servers, at Supabase:</p>
+  <ul>
+    <li>your email address, and the name and photo you set;</li>
+    <li>each keepsake you seal: its photos, video, sound, letters, songs, title and message, and how it is laid out;</li>
+    <li>who is on your Circle, the lines you leave each other, and the names and photos you give people, which only you see;</li>
+    <li>your labels, and for each keepsake whether you have opened, archived or deleted it, and where it sits;</li>
+    <li>your invites: when each was made, opened, used or cancelled and by whom, with a scrambled form of its code, never the code;</li>
+    <li>a token for each phone you allow notifications on, and which notifications you want.</li>
+  </ul>
+  <p>On your phone: a keepsake stays there until you seal it, with copies of what you have opened and your settings.</p>
+</section>
+<section>
+  <h2>Who sees what</h2>
+  <ul>
+    <li>A keepsake you seal: you and the person you send it to. One for someone new: you, and whoever takes up its invite.</li>
+    <li>People on your Circle: your name and photo.</li>
+    <li>Anyone who opens your invite, by its link or its code: your name and photo, until the invite is used, cancelled or 14 days old.</li>
+    <li>When you open a keepsake, its sender gets a notification saying so, unless either of you has turned that notification off.</li>
+  </ul>
+  <p>Keepsakes are not end-to-end encrypted: whoever runs KeepSake’s servers can read them.</p>
+</section>
+<section>
+  <h2>Other services</h2>
+  <ul>
+    <li>Supabase keeps everything above and sends the sign-in email.</li>
+    <li>Notifications pass through Expo’s push service and Apple. Each holds a name and a few words, such as “sent you a keepsake”, never what a keepsake holds.</li>
+    <li>To find a song, KeepSake sends the words you search for, or the link you paste, to Apple, Spotify or YouTube; the song’s artwork and preview come from them.</li>
+    <li>What you share leaves through your phone’s share sheet, to whoever you choose.</li>
+  </ul>
+  <p>KeepSake has no ads, analytics or trackers.</p>
+</section>
+<section>
+  <h2>Your phone</h2>
+  <p>KeepSake asks for the camera and microphone, to record video and sound, and for notifications. It reads only the photos, videos and sound files you pick, and the clipboard when you paste a song’s link.</p>
+</section>
+<section>
+  <h2>Deleting</h2>
+  <ul>
+    <li>Deleting a keepsake takes it out of your view. The other person keeps theirs, and it stays on KeepSake’s servers: a sealed keepsake never changes.</li>
+    <li>You can cancel an invite before it is used, remove a line you left, and change your name and photo.</li>
+    <li>Signing out takes the phone off your notifications and clears KeepSake’s drafts, files and caches from it.</li>
+  </ul>
+</section>
+<section>
+  <h2>Contact</h2>
+  <p>Questions about your information: <a href="mailto:keepsake@benbushell.nz">keepsake@benbushell.nz</a></p>
+</section>
+</body>
+</html>
