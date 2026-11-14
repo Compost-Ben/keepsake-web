@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- The code email's link, /signin/#<token>, where Keepsake did not open.
+The token rides in the fragment, which no server sees; this page sends it
+nowhere and keeps none of it. Its button hands it to the app. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0E1440">
+<meta name="robots" content="noindex">
+<title>Keepsake</title>
+<link rel="stylesheet" href="../palette.css">
+<style>
+  html { background: var(--solid); }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 16px;
+    background: url(../sky.svg) 0 0 / 100% 100%;
+    font: 600 17px -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+  a {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 320px;
+    padding: 15px 16px;
+    border-radius: 999px;
+    background: var(--fill);
+    color: var(--on-fill);
+    text-align: center;
+    text-decoration: none;
+  }
+  p {
+    margin: 0;
+    max-width: 320px;
+    color: var(--text);
+    font-weight: 400;
+    font-size: 15px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<a id="open" href="keepsake://">Open Keepsake</a>
+<p>Or type the code from the email instead.</p>
+<script>
+  var found = location.hash.match(/^#([\w-]+)$/);
+  if (found) document.getElementById('open').href = 'keepsake://signin/#' + found[1];
+</script>
+</body>
+</html>

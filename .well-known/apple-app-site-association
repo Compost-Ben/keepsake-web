@@ -3,7 +3,7 @@
     "details": [
       {
         "appIDs": ["J9X3Y3Z84U.nz.benbushell.keepsake"],
-        "components": [{ "/": "/invite/*" }]
+        "components": [{ "/": "/invite/*" }, { "/": "/signin/*" }]
       }
     ]
   },
