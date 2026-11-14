@@ -13,8 +13,9 @@ lines are for a device without it, and one that has only just got it. -->
 <meta property="og:title" content="Keepsake">
 <meta property="og:description" content="An invite to connect.">
 <meta property="og:image" content="https://keepsake.benbushell.nz/card.png">
+<link rel="stylesheet" href="../palette.css">
 <style>
-  html { background: #0E1440; }
+  html { background: var(--solid); }
   body {
     margin: 0;
     min-height: 100vh;
@@ -34,15 +35,15 @@ lines are for a device without it, and one that has only just got it. -->
     max-width: 320px;
     padding: 15px 16px;
     border-radius: 999px;
-    background: #FFFFFF;
-    color: #0E1440;
+    background: var(--fill);
+    color: var(--on-fill);
     text-align: center;
     text-decoration: none;
   }
   p {
     margin: 0;
     max-width: 320px;
-    color: #FFFFFF;
+    color: var(--text);
     font-weight: 400;
     font-size: 15px;
     text-align: center;
