@@ -6,5 +6,8 @@
         "components": [{ "/": "/invite/*" }]
       }
     ]
+  },
+  "webcredentials": {
+    "apps": ["J9X3Y3Z84U.nz.benbushell.keepsake"]
   }
 }
