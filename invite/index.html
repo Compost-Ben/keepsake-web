@@ -2,7 +2,7 @@
 <!-- An invite's link, /invite/#<code>, where Keepsake did not open. The
 code rides in the fragment, which no server sees, so every invite is this
 one page: status 200 and one preview card. Its button opens the app; its
-one line is for a device without it. -->
+lines are for a device without it, and one that has only just got it. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -52,6 +52,7 @@ one line is for a device without it. -->
 <body>
 <a id="open" href="keepsake://">Open in Keepsake</a>
 <p>No Keepsake on this device?<br>It is coming to the App Store.</p>
+<p>Just installed Keepsake? Tap the link again.</p>
 <script>
   var found = location.hash.match(/^#([0-9A-Z]{10})$/i);
   if (found) document.getElementById('open').href = 'keepsake://invite/' + found[1].toUpperCase();
