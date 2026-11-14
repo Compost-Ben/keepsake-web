@@ -37,6 +37,12 @@ nowhere and keeps none of it. Its button hands it to the app. -->
     text-align: center;
     text-decoration: none;
   }
+  .store {
+    margin-top: 16px;
+    border: 1px solid var(--text);
+    background: none;
+    color: var(--text);
+  }
   p {
     margin: 0;
     max-width: 320px;
@@ -49,7 +55,9 @@ nowhere and keeps none of it. Its button hands it to the app. -->
 </head>
 <body>
 <a id="open" href="keepsake://">Open Keepsake</a>
-<p>Or open the Keepsake app yourself and type in the code from the email.</p>
+<p>On another device? Open Keepsake on your phone and type in the code from the email.</p>
+<!-- No link until the App Store listing exists. -->
+<a class="store">Get Keepsake on the App Store</a>
 <script>
   var found = location.hash.match(/^#([\w-]+)$/);
   if (found) document.getElementById('open').href = 'keepsake://signin/#' + found[1];
