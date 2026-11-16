@@ -1,7 +1,8 @@
 <!doctype html>
 <!-- The code email's link, /signin/#<token>, where Keepsake did not open.
 The token rides in the fragment, which no server sees; this page sends it
-nowhere and keeps none of it. Its button hands it to the app. -->
+nowhere and keeps none of it. Its button hands it to the app, so shows only
+where Keepsake can be: anywhere else it would open nothing. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -56,13 +57,17 @@ nowhere and keeps none of it. Its button hands it to the app. -->
 </style>
 </head>
 <body>
-<a id="open" href="keepsake://">Open Keepsake</a>
+<a id="open" href="keepsake://" hidden>Open Keepsake</a>
 <p>On another device? Open Keepsake on your phone and type in the code from the email.</p>
 <!-- No link until the App Store listing exists. -->
 <a class="store">Get Keepsake on the App Store</a>
 <script>
+  var button = document.getElementById('open');
   var found = location.hash.match(/^#([\w-]+)$/);
-  if (found) document.getElementById('open').href = 'keepsake://signin/#' + found[1];
+  if (found) button.href = 'keepsake://signin/#' + found[1];
+  // An iPhone or iPad; an iPad's Safari says Mac, but has touch.
+  var ua = navigator.userAgent;
+  button.hidden = !(/iPhone|iPad/.test(ua) || (/Mac/.test(ua) && navigator.maxTouchPoints > 1));
 </script>
 </body>
 </html>
