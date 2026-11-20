@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-<!-- Written by `npm run palette` from the default palette: the card a Keepsake link shows in Messages. card.png is this at 1200 x 630. -->
+<!-- Written by `npm run palette` from the default palette: the card the site's link shows in Messages. card.png is this at 1200 x 630. -->
 <defs>
 <linearGradient id="sky" x1="0" y1="0" x2="0" y2="346" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0E1440"/><stop offset="0.5" stop-color="#264386"/><stop offset="0.8" stop-color="#6461E0"/><stop offset="1" stop-color="#F08AA8"/></linearGradient>
 <linearGradient id="water" x1="0" y1="346" x2="0" y2="630" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7A5DBE"/><stop offset="0.12" stop-color="#2E3688"/><stop offset="1" stop-color="#0A1033"/></linearGradient>
