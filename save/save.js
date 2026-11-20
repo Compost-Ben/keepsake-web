@@ -1,4 +1,4 @@
-// Save my keepsakes without the app (design/plans.html, part 4): sign in
+// Save my keepsakes without the app: sign in
 // with the email code, see every keepsake you hold, and save each as one
 // zip of what the app's writer, src/lib/saveKeepsakes.ts, puts in its
 // folder; change the two together. Reads go through the publishable key
