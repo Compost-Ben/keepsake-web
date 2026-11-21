@@ -11,6 +11,7 @@
 <meta property="og:description" content="Something for someone to keep.">
 <meta property="og:image" content="https://keepsakeapp.nz/card.png">
 <link rel="stylesheet" href="palette.css">
+<script src="store.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; }
   html { background: var(--solid); }
@@ -74,6 +75,19 @@
     font-weight: 500;
     line-height: 22px;
   }
+  /* Once in the store, the sign-in and invite pages' App Store button. */
+  a.store {
+    width: 100%;
+    max-width: 320px;
+    padding: 15px 16px;
+    border-color: var(--text);
+    background: none;
+    color: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+  }
   .about { max-width: 34em; margin-top: 28px; }
   .about p + p { margin-top: 14px; }
   /* The App Store's four shots after the words, clear of the keepsakes on
@@ -113,6 +127,7 @@
   <img class="hut" src="keepsakes/hut.svg" width="344" height="286" alt="">
 </div>
 <p class="store">Coming to the App Store</p>
+<script>if (appStore) document.querySelector('.store').outerHTML = '<a class="store" href="' + appStore + '">Get Keepsake on the App Store</a>';</script>
 <div class="about">
   <p>Make a keepsake from photos, video, sound, a letter or a song, laid out your way. Seal it, and it never changes.</p>
   <p>Send it to someone on your Circle, or to someone new with a link. It waits on their sky as a small sun until they open it.</p>

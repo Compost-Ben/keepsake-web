@@ -15,8 +15,13 @@ lines are for a device without it, and one that has only just got it. -->
 <meta property="og:image" content="https://keepsakeapp.nz/icon.png">
 <link rel="stylesheet" href="../palette.css">
 <script src="../store.js"></script>
-<!-- Apple's banner, written as the head is read; Safari ignores one added later. -->
-<script>if (appStore) document.write('<meta name="apple-itunes-app" content="app-id=6759589474">');</script>
+<!-- Apple's banner, written as the head is read; Safari ignores one added
+later. Its Open hands Keepsake the invite's link, as the app makes it. -->
+<script>
+  var found = location.hash.match(/^#([0-9A-Z]{10})$/i);
+  if (appStore) document.write('<meta name="apple-itunes-app" content="app-id=6759589474, app-argument=' +
+    'https://keepsakeapp.nz/invite/' + (found ? '#' + found[1].toUpperCase() : '') + '">');
+</script>
 <style>
   html { background: var(--solid); }
   body {
@@ -63,7 +68,6 @@ lines are for a device without it, and one that has only just got it. -->
 <p>No Keepsake on this device?<br>It is coming to the App Store.</p>
 <p>Just installed Keepsake? Tap the link again.</p>
 <script>
-  var found = location.hash.match(/^#([0-9A-Z]{10})$/i);
   if (found) document.getElementById('open').href = 'keepsake://invite/' + found[1].toUpperCase();
   if (appStore) document.querySelector('p').outerHTML =
     '<p>No Keepsake on this device?</p><a class="store" href="' + appStore + '">Get Keepsake on the App Store</a>';
