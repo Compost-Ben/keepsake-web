@@ -12,6 +12,7 @@ where Keepsake can be: anywhere else it would open nothing. -->
 <meta name="robots" content="noindex">
 <title>Keepsake</title>
 <link rel="stylesheet" href="../palette.css">
+<script src="../store.js"></script>
 <style>
   html { background: var(--solid); }
   body {
@@ -59,7 +60,6 @@ where Keepsake can be: anywhere else it would open nothing. -->
 <body>
 <a id="open" href="keepsake://" hidden>Open Keepsake</a>
 <p>On another device? Open Keepsake on your phone and type in the code from the email.</p>
-<!-- No link until the App Store listing exists. -->
 <a class="store">Get Keepsake on the App Store</a>
 <script>
   var button = document.getElementById('open');
@@ -68,6 +68,7 @@ where Keepsake can be: anywhere else it would open nothing. -->
   // An iPhone or iPad; an iPad's Safari says Mac, but has touch.
   var ua = navigator.userAgent;
   button.hidden = !(/iPhone|iPad/.test(ua) || (/Mac/.test(ua) && navigator.maxTouchPoints > 1));
+  if (appStore) document.querySelector('.store').href = appStore;
 </script>
 </body>
 </html>
