@@ -1,8 +1,9 @@
 <!doctype html>
 <!-- The code email's link, /signin/#<token>, where Keepsake did not open.
 The token rides in the fragment, which no server sees; this page sends it
-nowhere and keeps none of it. Its button hands it to the app, so shows only
-where Keepsake can be: anywhere else it would open nothing. -->
+nowhere and keeps none of it. Its first button hands it to the app, so shows
+only where Keepsake can be; the next signs this browser in at /app/. Neither
+goes by itself: the code may be for a phone, and a token signs in once. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -41,11 +42,13 @@ where Keepsake can be: anywhere else it would open nothing. -->
     text-align: center;
     text-decoration: none;
   }
-  .store {
-    margin-top: 16px;
+  .store, #here {
     border: 1px solid var(--text);
     background: none;
     color: var(--text);
+  }
+  .store {
+    margin-top: 16px;
   }
   p {
     margin: 0;
@@ -59,12 +62,14 @@ where Keepsake can be: anywhere else it would open nothing. -->
 </head>
 <body>
 <a id="open" href="keepsake://" hidden>Open Keepsake</a>
+<a id="here" href="/app/">Sign in on this browser</a>
 <p>On another device? Open Keepsake on your phone and type in the code from the email.</p>
 <a class="store">Get Keepsake on the App Store</a>
 <script>
   var button = document.getElementById('open');
   var found = location.hash.match(/^#([\w-]+)$/);
   if (found) button.href = 'keepsake://signin/#' + found[1];
+  document.getElementById('here').href = '/app/signin/' + (found ? '#' + found[1] : '');
   // An iPhone or iPad; an iPad's Safari says Mac, but has touch.
   var ua = navigator.userAgent;
   button.hidden = !(/iPhone|iPad/.test(ua) || (/Mac/.test(ua) && navigator.maxTouchPoints > 1));

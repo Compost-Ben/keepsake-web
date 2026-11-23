@@ -1,8 +1,9 @@
 <!doctype html>
 <!-- An invite's link, /invite/#<code>, where Keepsake did not open. The
 code rides in the fragment, which no server sees, so every invite is this
-one page: status 200 and one preview card. Its button opens the app; its
-lines are for a device without it, and one that has only just got it. -->
+one page: status 200 and one preview card. Where Keepsake cannot be, the
+invite opens in the browser, at /app/; an iPhone or iPad is offered the app
+first, then the browser, and lines for one that has only just got it. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -19,6 +20,10 @@ lines are for a device without it, and one that has only just got it. -->
 later. Its Open hands Keepsake the invite's link, as the app makes it. -->
 <script>
   var found = location.hash.match(/^#([0-9A-Z]{10})$/i);
+  var browser = '/app/invite/' + (found ? '#' + found[1].toUpperCase() : '');
+  // An iPhone or iPad; an iPad's Safari says Mac, but has touch.
+  var apple = /iPhone|iPad/.test(navigator.userAgent) || (/Mac/.test(navigator.userAgent) && navigator.maxTouchPoints > 1);
+  if (!apple) location.replace(browser);
   if (appStore) document.write('<meta name="apple-itunes-app" content="app-id=6759589474, app-argument=' +
     'https://keepsakeapp.nz/invite/' + (found ? '#' + found[1].toUpperCase() : '') + '">');
 </script>
@@ -48,7 +53,7 @@ later. Its Open hands Keepsake the invite's link, as the app makes it. -->
     text-align: center;
     text-decoration: none;
   }
-  .store {
+  .store, #here {
     border: 1px solid var(--text);
     background: none;
     color: var(--text);
@@ -65,10 +70,12 @@ later. Its Open hands Keepsake the invite's link, as the app makes it. -->
 </head>
 <body>
 <a id="open" href="keepsake://">Open in Keepsake</a>
+<a id="here" href="/app/">Open it in this browser</a>
 <p>No Keepsake on this device?<br>It is coming to the App Store.</p>
 <p>Just installed Keepsake? Tap the link again.</p>
 <script>
   if (found) document.getElementById('open').href = 'keepsake://invite/' + found[1].toUpperCase();
+  document.getElementById('here').href = browser;
   if (appStore) document.querySelector('p').outerHTML =
     '<p>No Keepsake on this device?</p><a class="store" href="' + appStore + '">Get Keepsake on the App Store</a>';
 </script>
