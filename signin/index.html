@@ -70,9 +70,9 @@ goes by itself: the code may be for a phone, and a token signs in once. -->
   var found = location.hash.match(/^#([\w-]+)$/);
   if (found) button.href = 'keepsake://signin/#' + found[1];
   document.getElementById('here').href = '/app/signin/' + (found ? '#' + found[1] : '');
-  // An iPhone or iPad; an iPad's Safari says Mac, but has touch.
+  // A phone or iPad; an iPad's Safari says Mac, but has touch.
   var ua = navigator.userAgent;
-  button.hidden = !(/iPhone|iPad/.test(ua) || (/Mac/.test(ua) && navigator.maxTouchPoints > 1));
+  button.hidden = !(/Android|iPhone|iPad/.test(ua) || (/Mac/.test(ua) && navigator.maxTouchPoints > 1));
   if (appStore) document.querySelector('.store').href = appStore;
 </script>
 </body>

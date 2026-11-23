@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls", "delegate_permission/common.get_login_creds"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "nz.benbushell.keepsake",
+      "sha256_cert_fingerprints": ["52:18:74:47:A8:CB:20:D7:4F:A4:DD:66:C5:3A:A1:3E:4B:64:21:7C:9B:88:70:7B:B1:9D:5E:53:B4:C8:41:47"]
+    }
+  }
+]
