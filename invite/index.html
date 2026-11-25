@@ -85,7 +85,7 @@ later. Its Open hands Keepsake the invite's link, as the app makes it. -->
   document.getElementById('here').href = browser;
   if (appStore) document.querySelector('p').outerHTML =
     '<p>No Keepsake on this device?</p><a class="store" href="' + appStore + '">Get Keepsake on the App Store</a>' +
-    (found ? '<p>It copies your invite, to paste when Keepsake opens.</p>' : '');
+    (found ? '<p>Once it is installed, come back here and tap Open in Keepsake.</p>' : '');
   // The copy waits for the tap, as Safari asks, and the App Store opens
   // whether or not it took.
   var store = document.querySelector('.store');
