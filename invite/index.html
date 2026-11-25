@@ -5,7 +5,9 @@ one page: status 200 and one preview card. Where Keepsake cannot be, the
 invite opens in the browser, at /app/; an iPhone or iPad here most likely
 has no Keepsake (with it, the link opens the app), so it leads with the
 browser, then the App Store, then the app, and a line for one that has
-only just got it. An
+only just got it. No link reaches an app through the App Store, so the
+App Store's button copies the invite on the way, and Keepsake's welcome
+asks for it pasted while something is copied. An
 invite email's link carries its one-tap pass after the code (?pass=),
 handed on wherever the invite goes. -->
 <html lang="en">
@@ -77,12 +79,22 @@ later. Its Open hands Keepsake the invite's link, as the app makes it. -->
 <a id="here" href="/app/">Open it here</a>
 <p>No Keepsake on this device?<br>It is coming to the App Store.</p>
 <a id="open" href="keepsake://">Open in Keepsake</a>
-<p>Just installed Keepsake? Tap the link again.</p>
+<p>Just installed Keepsake? Tap Open in Keepsake.</p>
 <script>
   if (found) document.getElementById('open').href = 'keepsake://invite/' + invite;
   document.getElementById('here').href = browser;
   if (appStore) document.querySelector('p').outerHTML =
-    '<p>No Keepsake on this device?</p><a class="store" href="' + appStore + '">Get Keepsake on the App Store</a>';
+    '<p>No Keepsake on this device?</p><a class="store" href="' + appStore + '">Get Keepsake on the App Store</a>' +
+    (found ? '<p>It copies your invite, to paste when Keepsake opens.</p>' : '');
+  // The copy waits for the tap, as Safari asks, and the App Store opens
+  // whether or not it took.
+  var store = document.querySelector('.store');
+  if (store && found) store.addEventListener('click', function (event) {
+    event.preventDefault();
+    var go = function () { location.href = store.href; };
+    var copying = navigator.clipboard && navigator.clipboard.writeText('https://keepsakeapp.nz/invite/#' + invite);
+    if (copying) copying.then(go, go); else go();
+  });
 </script>
 </body>
 </html>
