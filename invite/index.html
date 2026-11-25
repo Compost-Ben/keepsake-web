@@ -2,8 +2,10 @@
 <!-- An invite's link, /invite/#<code>, where Keepsake did not open. The
 code rides in the fragment, which no server sees, so every invite is this
 one page: status 200 and one preview card. Where Keepsake cannot be, the
-invite opens in the browser, at /app/; an iPhone or iPad is offered the app
-first, then the browser, and lines for one that has only just got it. An
+invite opens in the browser, at /app/; an iPhone or iPad here most likely
+has no Keepsake (with it, the link opens the app), so it leads with the
+browser, then the App Store, then the app, and a line for one that has
+only just got it. An
 invite email's link carries its one-tap pass after the code (?pass=),
 handed on wherever the invite goes. -->
 <html lang="en">
@@ -56,7 +58,7 @@ later. Its Open hands Keepsake the invite's link, as the app makes it. -->
     text-align: center;
     text-decoration: none;
   }
-  .store, #here {
+  .store, #open {
     border: 1px solid var(--text);
     background: none;
     color: var(--text);
@@ -72,9 +74,9 @@ later. Its Open hands Keepsake the invite's link, as the app makes it. -->
 </style>
 </head>
 <body>
-<a id="open" href="keepsake://">Open in Keepsake</a>
-<a id="here" href="/app/">Open it in this browser</a>
+<a id="here" href="/app/">Open it here</a>
 <p>No Keepsake on this device?<br>It is coming to the App Store.</p>
+<a id="open" href="keepsake://">Open in Keepsake</a>
 <p>Just installed Keepsake? Tap the link again.</p>
 <script>
   if (found) document.getElementById('open').href = 'keepsake://invite/' + invite;
