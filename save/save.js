@@ -89,7 +89,7 @@ async function listHeld(userId) {
     select: 'entries!inner(id,user_id,connection_id,copy_of,title,message,sealed_at,hero_snapshot_path)',
     user_id: `eq.${userId}`,
     deleted_at: 'is.null',
-    visible_from_utc: `lte.${new Date().toISOString()}`,
+    visible_from_utc: 'lte.now',
     'entries.sealed_at': 'not.is.null',
   });
   const held = rows.flatMap(({ entries: entry }) => (entry.sealed_at ? [entry] : []));
